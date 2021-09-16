@@ -17,6 +17,7 @@ public class ContainerActivity extends AppCompatActivity {
             return;
         }
 
+        mPluginActivity.setContainerActivity(this);
         mPluginActivity.onCreate(savedInstanceState);
     }
 

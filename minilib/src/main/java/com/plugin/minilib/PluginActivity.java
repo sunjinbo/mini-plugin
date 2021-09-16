@@ -7,12 +7,13 @@ import android.view.View;
 public class PluginActivity extends Activity {
     private ContainerActivity mContainerActivity;
 
-    public PluginActivity(ContainerActivity containerActivity) {
+    public void setContainerActivity(ContainerActivity containerActivity) {
         mContainerActivity = containerActivity;
     }
 
     @Override
     public <T extends View> T findViewById(int id) {
+        if (mContainerActivity == null) return findViewById(id);
         return mContainerActivity.findViewById(id);
     }
 
